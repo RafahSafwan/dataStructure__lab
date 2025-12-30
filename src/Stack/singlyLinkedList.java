@@ -1,6 +1,6 @@
-package SinglyLinkedList;
+package Stack;
 
-public class singlyLinkedList <E>{
+public class singlyLinkedList<E>{
 
     private Node<E> head;
     private Node<E>tail;
@@ -24,11 +24,13 @@ public class singlyLinkedList <E>{
         return head.getData();
     }
     public E removeFrist(){
-        E delete=head.getData();
+        if (isEmpty())return null;
+        E delet=head.getData();
         head=head.getNext();
+        size--;
         if(size()==0)
             tail=head;
-        return delete;
+        return delet;
 
 
     }public  void addlast(E data){
@@ -48,7 +50,7 @@ public class singlyLinkedList <E>{
             return tail.getData();}
     }
     public E removelast(){
-        E delete=tail.getData();
+        E delet=tail.getData();
         if(isEmpty()) return null;
         if (head== tail){
             head=tail=null;}
@@ -63,7 +65,7 @@ public class singlyLinkedList <E>{
 
         }size--;
 
-        return delete;
+        return delet;
     }public void display(){
         Node<E> temp=head;
         while (temp!=null){
