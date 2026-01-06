@@ -2,6 +2,7 @@ package Stack;
 
 public class SLinkedListStack <E> implements Stack<E>{
     singlyLinkedList <E> sList=new  singlyLinkedList();
+
     @Override
     public Boolean isEmpty() {
       return sList.isEmpty();

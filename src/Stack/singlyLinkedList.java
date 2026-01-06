@@ -25,12 +25,12 @@ public class singlyLinkedList<E>{
     }
     public E removeFrist(){
         if (isEmpty())return null;
-        E delet=head.getData();
+        E delete=head.getData();
         head=head.getNext();
         size--;
         if(size()==0)
             tail=head;
-        return delet;
+        return delete;
 
 
     }public  void addlast(E data){
@@ -50,7 +50,7 @@ public class singlyLinkedList<E>{
             return tail.getData();}
     }
     public E removelast(){
-        E delet=tail.getData();
+        E delete=tail.getData();
         if(isEmpty()) return null;
         if (head== tail){
             head=tail=null;}
@@ -65,7 +65,7 @@ public class singlyLinkedList<E>{
 
         }size--;
 
-        return delet;
+        return delete;
     }public void display(){
         Node<E> temp=head;
         while (temp!=null){
