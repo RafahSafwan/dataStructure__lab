@@ -9,9 +9,11 @@ public class singlyLinkedList <E>{
     public int size(){
         return size;
     }
+
     public boolean isEmpty(){
         return size()==0;
     }
+
     public void addFrist(E data){
         Node<E> nnod= new Node<>(head,data);
         head=nnod;
@@ -19,19 +21,24 @@ public class singlyLinkedList <E>{
             tail=head;
         size++;
     }
+
     public E getFrist(){
         if (isEmpty())return null;
         return head.getData();
     }
+
     public E removeFrist(){
+        if(isEmpty())return null;
         E delete=head.getData();
         head=head.getNext();
-        if(size()==0)
+        size--;
+        if(size()==0){
             tail=head;
+        }
         return delete;
+    }
 
-
-    }public  void addlast(E data){
+    public  void addlast(E data){
         Node <E > nnode=new Node(null,data);
         if (isEmpty()){
             head=nnode;
@@ -41,6 +48,7 @@ public class singlyLinkedList <E>{
         }tail=nnode;
         size++;
     }
+
     public E getlast(){
         if (isEmpty())
             return null;
@@ -59,10 +67,7 @@ public class singlyLinkedList <E>{
                 temp.getNext();
             }temp.setNext(null);
             tail=temp;
-
-
         }size--;
-
         return delete;
     }public void display(){
         Node<E> temp=head;
